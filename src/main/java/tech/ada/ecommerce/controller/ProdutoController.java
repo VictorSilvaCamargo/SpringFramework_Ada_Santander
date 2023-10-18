@@ -37,23 +37,23 @@ public class ProdutoController {
     }
 
     @PutMapping("/{id}/atualizar-estoque")
-    public Produto atualizarEstoque(@PathVariable Long id, @RequestParam int novoEstoque) {
-        return produtoService.atualizarEstoque(id, novoEstoque);
+    public Produto atualizarEstoque(@PathVariable Long id, @RequestBody Produto produto) {
+        return produtoService.atualizarEstoque(id, produto.getQtdEstoque());
     }
 
     @PutMapping("/{id}/atualizar-nome")
-    public Produto atualizarNome(@PathVariable Long id, @RequestParam String novoNome) {
-        return produtoService.atualizarNome(id, novoNome);
+    public Produto atualizarNome(@PathVariable Long id, @RequestBody Produto produto) {
+        return produtoService.atualizarNome(id, produto.getNome());
     }
 
     @PutMapping("/{id}/atualizar-sku")
-    public Produto atualizarSku(@PathVariable Long id, @RequestParam String novoSku) {
-        return produtoService.atualizarSKU(id, novoSku);
+    public Produto atualizarSku(@PathVariable Long id, @RequestBody Produto produto) {
+        return produtoService.atualizarSKU(id, produto.getSku());
     }
 
     @PutMapping("/{id}/atualizar-preco")
-    public Produto atualizarPreco(@PathVariable Long id, @RequestParam double novoPreco) {
-        return produtoService.atualizarPreco(id, novoPreco);
+    public Produto atualizarPreco(@PathVariable Long id, @RequestBody Produto produto) {
+        return produtoService.atualizarPreco(id, produto.getPreco());
     }
 }
 

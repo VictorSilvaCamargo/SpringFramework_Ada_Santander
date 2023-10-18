@@ -46,14 +46,15 @@ public class ProdutoService {
 
     }
 
-    public Produto atualizarNome(Long id, String novoNome) {
+    public Produto atualizarNome(Long id, String nome) {
         // Obter o produto atual
         Produto produto = produtoRepository.findById(id).orElse(null);
+
 
         // Verificar se o produto com o ID fornecido existe
         if (produto != null) {
             // Usar o setter para atualizar o nome
-            produto.setNome(novoNome);
+            produto.setNome(nome);
             // Salvar as alterações no repositório
             return produtoRepository.save(produto);
         } else {
